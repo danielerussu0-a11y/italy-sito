@@ -1,0 +1,473 @@
+<!DOCTYPE html><html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ITALY RP 🇮🇹 | Sito Ufficiale</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #080808;
+  color: white;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(rgba(0,0,0,.72), rgba(0,0,0,.9)),
+    radial-gradient(circle at top left, rgba(0, 146, 70, .35), transparent 35%),
+    radial-gradient(circle at top right, rgba(206, 43, 55, .35), transparent 35%);
+  z-index: -2;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: -1;
+  opacity: .5;
+}
+
+header {
+  width: 100%;
+  padding: 22px 8%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0,0,0,.45);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.logo span:nth-child(1) { color: #009246; }
+.logo span:nth-child(2) { color: #fff; }
+.logo span:nth-child(3) { color: #ce2b37; }
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 22px;
+  font-weight: 700;
+  font-size: 14px;
+  opacity: .85;
+  transition: .25s;
+}
+
+nav a:hover {
+  opacity: 1;
+  color: #2ecc71;
+}
+
+.hero {
+  min-height: 100vh;
+  padding: 140px 8% 80px;
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: center;
+  gap: 50px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.15);
+  font-weight: 800;
+  margin-bottom: 22px;
+  color: #f4f4f4;
+}
+
+.hero h1 {
+  font-size: clamp(46px, 8vw, 92px);
+  line-height: .95;
+  font-weight: 1000;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.hero h1 .green { color: #009246; }
+.hero h1 .white { color: #ffffff; text-shadow: 0 0 25px rgba(255,255,255,.18); }
+.hero h1 .red { color: #ce2b37; }
+
+.hero p {
+  font-size: 19px;
+  line-height: 1.7;
+  max-width: 650px;
+  color: #d7d7d7;
+  margin-bottom: 32px;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.btn {
+  border: none;
+  padding: 15px 24px;
+  border-radius: 16px;
+  font-weight: 900;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  transition: .25s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #009246, #18c46b);
+  box-shadow: 0 10px 35px rgba(0,146,70,.35);
+}
+
+.btn-secondary {
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.15);
+}
+
+.btn-red {
+  background: linear-gradient(135deg, #ce2b37, #ff4b5b);
+  box-shadow: 0 10px 35px rgba(206,43,55,.3);
+}
+
+.btn:hover {
+  transform: translateY(-4px) scale(1.02);
+}
+
+.hero-card {
+  position: relative;
+  padding: 30px;
+  border-radius: 32px;
+  background: linear-gradient(145deg, rgba(255,255,255,.13), rgba(255,255,255,.04));
+  border: 1px solid rgba(255,255,255,.14);
+  box-shadow: 0 30px 100px rgba(0,0,0,.55);
+  overflow: hidden;
+}
+
+.hero-card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(135deg, #009246, transparent, #ce2b37);
+  opacity: .25;
+  z-index: -1;
+}
+
+.city-box {
+  height: 390px;
+  border-radius: 26px;
+  background:
+    linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.85)),
+    url("https://images.unsplash.com/photo-1529260830199-42c24126f198?auto=format&fit=crop&w=1200&q=80");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  padding: 24px;
+  border: 1px solid rgba(255,255,255,.12);
+}
+
+.city-box h2 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.stats {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.stat {
+  padding: 18px;
+  border-radius: 20px;
+  background: rgba(0,0,0,.35);
+  border: 1px solid rgba(255,255,255,.1);
+  text-align: center;
+}
+
+.stat strong {
+  display: block;
+  font-size: 24px;
+  color: #2ecc71;
+}
+
+section {
+  padding: 90px 8%;
+}
+
+.section-title {
+  text-align: center;
+  font-size: clamp(32px, 5vw, 52px);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.section-subtitle {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 45px;
+  color: #cfcfcf;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.card {
+  padding: 28px;
+  border-radius: 26px;
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.1);
+  transition: .25s;
+  min-height: 210px;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  background: rgba(255,255,255,.11);
+  box-shadow: 0 20px 55px rgba(0,0,0,.4);
+}
+
+.card .icon {
+  font-size: 42px;
+  margin-bottom: 18px;
+}
+
+.card h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: #d4d4d4;
+  line-height: 1.6;
+}
+
+.game-box {
+  background: linear-gradient(135deg, rgba(0,146,70,.24), rgba(255,255,255,.08), rgba(206,43,55,.24));
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 34px;
+  padding: 42px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 30px;
+  box-shadow: 0 30px 100px rgba(0,0,0,.45);
+}
+
+.game-box h2 {
+  font-size: 38px;
+  margin-bottom: 12px;
+}
+
+.game-box p {
+  color: #e1e1e1;
+  line-height: 1.7;
+}
+
+.discord {
+  text-align: center;
+  border-radius: 36px;
+  background: linear-gradient(145deg, rgba(88,101,242,.25), rgba(0,0,0,.5));
+  border: 1px solid rgba(255,255,255,.12);
+  padding: 60px 30px;
+}
+
+.discord h2 {
+  font-size: 42px;
+  margin-bottom: 18px;
+}
+
+.discord p {
+  color: #d8d8d8;
+  margin-bottom: 25px;
+  font-size: 18px;
+}
+
+footer {
+  padding: 30px 8%;
+  text-align: center;
+  color: #aaa;
+  background: rgba(0,0,0,.55);
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+
+@media (max-width: 900px) {
+  header {
+    padding: 18px 5%;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 130px 5% 60px;
+  }
+
+  section {
+    padding: 70px 5%;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .game-box {
+    grid-template-columns: 1fr;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><span>ITALY</span> <span>RP</span> <span>🇮🇹</span></div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#info">Info</a>
+      <a href="#lavori">Lavori</a>
+      <a href="#gioco">Gioca Ora</a>
+      <a href="#discord">Discord</a>
+    </nav>
+  </header>  <main>
+    <section class="hero" id="home">
+      <div>
+        <div class="badge">🇮🇹 Roleplay Italiano Ufficiale</div>
+        <h1>
+          <span class="green">ITALY</span><br>
+          <span class="white">ROLEPLAY</span><br>
+          <span class="red">RP</span>
+        </h1>
+        <p>
+          Entra in una community italiana seria, realistica e organizzata. Vivi la tua storia, scegli il tuo lavoro, rispetta le regole RP e diventa parte di una città piena di azione.
+        </p>
+        <div class="buttons">
+          <a class="btn btn-primary" href="#gioco">🎮 Gioca Ora</a>
+          <a class="btn btn-secondary" href="#info">📌 Scopri di più</a>
+          <a class="btn btn-red" href="#discord">💬 Discord</a>
+        </div>
+      </div><div class="hero-card">
+    <div class="city-box">
+      <div>
+        <h2>Benvenuto in Italia 🇮🇹</h2>
+        <p>RP realistico • lavori attivi • staff presente</p>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><strong>24/7</strong><span>Community</span></div>
+      <div class="stat"><strong>RP</strong><span>Serio</span></div>
+      <div class="stat"><strong>ITA</strong><span>Server</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="info">
+  <h2 class="section-title">Perché scegliere ITALY RP?</h2>
+  <p class="section-subtitle">
+    Un server creato per chi vuole divertirsi con un roleplay italiano curato, con staff disponibile, eventi, lavori e una community seria.
+  </p>
+  <div class="grid">
+    <div class="card">
+      <div class="icon">🚓</div>
+      <h3>RP Realistico</h3>
+      <p>Situazioni realistiche, regole chiare e gameplay ordinato per rendere ogni scena più bella.</p>
+    </div>
+    <div class="card">
+      <div class="icon">👥</div>
+      <h3>Community Seria</h3>
+      <p>Giocatori italiani, staff attivo e ambiente organizzato per tutti i membri.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🎉</div>
+      <h3>Eventi Speciali</h3>
+      <p>Eventi RP, sessioni organizzate, attività pubbliche e momenti esclusivi per la community.</p>
+    </div>
+  </div>
+</section>
+
+<section id="lavori">
+  <h2 class="section-title">Lavori Disponibili</h2>
+  <p class="section-subtitle">
+    Scegli il tuo percorso e costruisci la tua storia dentro ITALY RP.
+  </p>
+  <div class="grid">
+    <div class="card">
+      <div class="icon">🚔</div>
+      <h3>Polizia</h3>
+      <p>Proteggi la città, controlla il territorio e mantieni l'ordine pubblico.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🚑</div>
+      <h3>EMS</h3>
+      <p>Salva vite, intervieni nelle emergenze e aiuta i cittadini feriti.</p>
+    </div>
+    <div class="card">
+      <div class="icon">👨‍🚒</div>
+      <h3>Vigili del Fuoco</h3>
+      <p>Gestisci incendi, incidenti e interventi speciali in città.</p>
+    </div>
+  </div>
+</section>
+
+<section id="gioco">
+  <div class="game-box">
+    <div>
+      <h2>🎮 Gioca Ora</h2>
+      <p>
+        Premi il pulsante per aprire il gioco ufficiale. Cambia il link qui sotto con il tuo link Roblox, FiveM o altro gioco RP.
+      </p>
+    </div>
+    <a class="btn btn-primary" href="https://www.roblox.com/it/games/7711635737/Emergency-Hamburg" target="_blank">Apri Gioco</a>
+  </div>
+</section>
+
+<section id="discord">
+  <div class="discord">
+    <h2>💬 Entra nel Discord</h2>
+    <p>Unisciti alla community ufficiale di ITALY RP 🇮🇹 per news, ticket, candidature e annunci.</p>
+    <a class="btn btn-red" href="https://discord.gg/Mgsv854da6" target="_blank">Entra nel Discord</a>
+  </div>
+</section>
+
+  </main>  <footer>
+    © 2026 ITALY RP 🇮🇹 — Sito Ufficiale. Tutti i diritti riservati.
+  </footer>
+</body>
+</html>
